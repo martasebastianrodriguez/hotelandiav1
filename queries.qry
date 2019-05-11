@@ -1,0 +1,36 @@
+/**
+ * New query file
+ */
+query AllHoteles {
+   description: "Devuelve todos los hoteles del registro"
+   statement:  
+     SELECT  org.uoc.reservahotel.hotel.Hotel
+ }
+query HotelbyName{
+   description: "Returns all flights in the registry"
+   statement:  
+      SELECT  org.uoc.reservahotel.hotel.Hotel
+  	  WHERE   (hotelName == _$hotel_name)
+  } 
+
+  query Hotelespordireccionyciudad {
+   description: "devuelve  los hoteles del resgistro"
+   statement:  
+      SELECT  org.uoc.reservahotel.hotel.Hotel
+  	  WHERE   (address.address == _$address AND address.city == _$city )
+  }
+
+ query HotelespordireccionyciudadOrdenados {
+   description: "devuelve  los hoteles del resgistro"
+   statement:  
+      SELECT  org.uoc.reservahotel.hotel.Hotel
+  	  WHERE   (address.address == _$address AND address.city == _$city )
+      ORDER BY [hotelName ASC]
+  } 
+
+
+  query AllPaquetes{
+  description: "devuelve  los paquetes del resgistro"
+  statement:  
+    SELECT  org.uoc.reservahotel.hotelandia.Hotelandia
+}

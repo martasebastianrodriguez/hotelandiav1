@@ -1,4 +1,4 @@
-namespace org.uoc.reservahotel.hotel.Hotelandia
+namespace org.uoc.reservahotel.hotel
 
 /** Hotel == flight*/
 import org.uoc.reservahotel.hotelandia.Hotelandia
