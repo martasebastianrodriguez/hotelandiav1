@@ -1,0 +1,43 @@
+namespace org.uoc.reservahotel.hotel.Hotelandia
+
+/** Hotel == flight*/
+import org.uoc.reservahotel.hotelandia.Hotelandia
+
+asset Hotel identified by hotelId {
+  o String hotelId 
+  o String hotelName
+  o Address address
+  
+ 
+}
+
+concept Address {
+  o String address
+  o String city		regex=/[A-Z][A-Z][A-Z]/
+  o DateTime scheduled   
+}
+transaction CreateHotel {
+  o   String      hotelName
+  o   String      address
+  o   String      city
+  o   DateTime    scheduled
+}
+
+event HotelCreated {
+  o   String      hotelId
+}
+
+// Assigns an aircraft to the flight
+// The logistics / validation on availability of aircraft
+// Kept outside of the Blockchain
+transaction AssignHotelandia {
+  o   String    hotelId
+  o   String    hotelandiaId
+}
+
+// Event indicating that aircraft was assigned
+event HotelandiaAssigned {
+  o   String    hotelId
+  o   String    hotelandiaId
+}
+

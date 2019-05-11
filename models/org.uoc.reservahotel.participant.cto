@@ -1,0 +1,20 @@
+namespace org.uoc.reservahotel.participant
+
+abstract participant uocparticipant identified by participantKey {
+  o String participantKey
+  o Contact contact
+}
+concept Contact {
+  o String fname
+  o String lname
+  o String email
+}
+participant uocNetworkAdmin extends uocparticipant{
+
+}
+participant uocPersonnel extends uocparticipant{
+  o String department
+}
+participant B2BPatner extends uocparticipant{
+ 
+}
